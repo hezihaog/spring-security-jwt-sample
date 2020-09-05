@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+<h1>权限管理系统</h1>
+<form action="/login" method="post">
+    <spa>用户名</spa>
+    <input type="text" name="username" id="username"><br>
+    <spa>密码</spa>
+    <input type="password" name="password" id="password"><br>
+    <!-- From表单方式，不前后端分离 -->
+    <!--    <input type="submit" value="登录">-->
+    <!-- 前后端分离，使用ajax上传json -->
+    <input type="button" onclick="login()" value="登录">
+</form>
+</body>
+<script>
+    //登录
+    function login() {
+        $.ajax({
+            type: "POST",
+            url: "/login",
+            data: {
+                "username": $("#username").val(),
+                "password": $("#password").val()
+            },
+            success: function(data) {
+                //成功，跳转到首页
+                if (data.code === 20001) {
+                    location.href = "/index"
+                } else {
+                    alert(data.msg)
+                }
+            }
+        });
+    }
+</script>
+</html>
