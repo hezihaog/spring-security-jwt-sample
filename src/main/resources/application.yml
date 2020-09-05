@@ -4,3 +4,11 @@ spring:
     url: jdbc:mysql://localhost:3306/admin?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: hezihao123
+
+jwt:
+  # 令牌自定义标识
+  header: Authorization
+  # 令牌秘钥 abcdefghijklmnopqrstuvwxyz
+  secret: (EMOK:)_$^11244^%$_(IS:)_@@++--(COOL:)_++++_.sds_(GUY:)
+  # 令牌有效期（默认30分钟）
+  expireTime: 3600000

@@ -2,7 +2,6 @@ package com.zh.java.springsecurityjwtsample.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 2020/9/4 6:06 下午
  * <p>
  */
-@Controller("/")
+@Controller()
 public class HomeController {
     /**
      * 登录

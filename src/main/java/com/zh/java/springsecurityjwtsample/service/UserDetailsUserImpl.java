@@ -20,7 +20,7 @@ import java.util.List;
  * 使用Spring Security 要实现UserDetailsService接口
  */
 @Service
-public class UserDetailUserImpl implements UserDetailsService {
+public class UserDetailsUserImpl implements UserDetailsService {
     @Autowired
     private UserService userService;
 
